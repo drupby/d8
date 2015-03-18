@@ -5,6 +5,7 @@
  */
 
 use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\user\Entity\User;
 
 /**
@@ -72,4 +73,13 @@ function drupalru_install() {
 
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', '1')->save();
+
+  // Change language and label for tags vocabulary.
+  $vocabulary = Vocabulary::load('tags');
+  $vocabulary
+    ->set('langcode', 'ru')
+    ->set('name', 'Ключевые слова')
+    ->set('description', 'Категории материалов сайта')
+    ->save();
+  \Drupal::configFactory()->getEditable('forum.settings')->set('vocabulary', 'drupal_ru_forum')->save();
 }

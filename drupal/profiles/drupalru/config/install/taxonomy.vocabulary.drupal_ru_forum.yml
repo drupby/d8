@@ -1,0 +1,8 @@
+langcode: ru
+status: true
+dependencies: {  }
+name: Форумы
+vid: drupal_ru_forum
+description: 'Обсуждения материалов сайта и вопросов по Drupal'
+hierarchy: 0
+weight: 0

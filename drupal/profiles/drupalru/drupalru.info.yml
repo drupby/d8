@@ -36,6 +36,10 @@ dependencies:
   - views
   - views_ui
   - tour
+# A drupal.ru dependencies.
+  - forum
+  - language
+  - locale
 themes:
   - bartik
   - seven
